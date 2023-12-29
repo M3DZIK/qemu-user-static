@@ -7,7 +7,7 @@ RUN apt update && \
     apt download qemu-user-static && \
     dpkg-deb -R qemu-user-static_*.deb /app/releases
 
-FROM debian:stable-slim
+FROM debian:unstable-slim
 
 ENV QEMU_BIN_DIR=/usr/bin
 
