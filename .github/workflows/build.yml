@@ -50,6 +50,7 @@ jobs:
         run: |
           cp -p "containers/latest/register.sh" "containers/register/"
           cp -p "containers/latest/Dockerfile" "containers/register/"
+          sed -i '/^COPY --from=download_qemu/ s/^/#/' "${out_dir}/register/Dockerfile"
 
       - name: Build and push "register" container
         uses: docker/build-push-action@v5
